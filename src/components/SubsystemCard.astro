@@ -1,0 +1,13 @@
+---
+interface Props {
+	team: string;
+	desc: string;
+}
+
+const { team, desc, } = Astro.props;
+---
+<div class="flex flex-col items-center max-w-[80rem] top-0">
+	<slot />
+	<div class="text-white font-Sometype font-bold text-xl pt-2">{team}</div>
+	<div class="text-gray-300 font-Sometype">{desc}</div>
+</div>
