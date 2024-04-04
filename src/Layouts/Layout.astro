@@ -1,2 +1,29 @@
 ---
+import Navbar from '../components/NavBar';
+import Header from '../components/3DHeader';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	heading?: string;
+}
+
+const {heading} = Astro.props;
 ---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="logo.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>MUNStar-1</title>
+	</head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Economica&family=Quicksand:wght@300&family=Roboto:wght@300&family=Sometype+Mono:wght@400;700&display=swap" rel="stylesheet">
+	<body>
+		<Navbar client:load />
+		<Header client:only="react" heading={heading} />
+		<slot />
+		<Footer />
+	</body>
+</html>

@@ -1,72 +1,53 @@
 ---
-import Navbar from '../components/NavBar.jsx';
-import Header from '../components/3DHeader.jsx';
-import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import { Cog, Flame, Satellite, Computer, Zap, SatelliteDish, Weight } from 'lucide-react';
-
 import killick from '../content/killick.jpg';
 import SubsystemCard from '../components/SubsystemCard.astro';
+import Layout from '../Layouts/Layout.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="logo.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>MUNStar-1</title>
-	</head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Economica&family=Quicksand:wght@300&family=Roboto:wght@300&family=Sometype+Mono:wght@400;700&display=swap" rel="stylesheet">
-	<body>
-		<Navbar client:load />
-		<Header client:only="react" />
-		<div id="about" class="flex justify-center bg-zinc-900">
-			<div class="flex flex-col items-center py-10">
-				<div class="text-2xl text-white font-Sometype font-bold">Summary</div>
-				<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
-				<div class="pt-4 lg:px-[30%] px-10 text-gray-300">
-					<div class="font-Sometype">
-						MUNStar-1 is a student design team based out of Memorial University, in Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency’s “CUBICS” Mission. The CubeSat is currently expected to launch in 2026. 
-					</div>
+<Layout>
+	<div id="about" class="flex justify-center bg-zinc-900">
+		<div class="flex flex-col items-center py-10">
+			<div class="text-2xl text-white font-Sometype font-bold">Summary</div>
+			<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
+			<div class="pt-4 lg:px-[30%] px-10 text-gray-300">
+				<div class="font-Sometype">
+					MUNStar-1 is a student design team based out of Memorial University, in Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency’s “CUBICS” Mission. The CubeSat is currently expected to launch in 2026. 
 				</div>
 			</div>
 		</div>
-		<div id="what" class="flex justify-center bg-zinc-900">
-			<div class="flex flex-col items-center py-10">
-				<div class="text-2xl text-white font-Sometype font-bold">What is a CubeSat?</div>
-				<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
-				<div class="relative mx-auto rounded-lg overflow-hidden">
-					<Image height={512} src={killick} alt="cubesat" />
-				</div>
-				<div class="pt-4 lg:px-[30%] px-10 text-gray-300">
-					<div class="font-Sometype">
-						A CubeSat, short for Cube Satellite, is a type of miniaturized satellite used for various purposes, including scientific research, technology demonstration, and education. CubeSats are small, cube-shaped spacecraft with standardized dimensions, which makes them relatively inexpensive to develop and launch compared to traditional, larger satellites.<br/><br/>
-						The most common CubeSat form factor is a 10x10x10 centimeter (1U) cube, with a mass of approximately 1 kilogram. However, variations exist, including 2U (20x10x10 cm), 3U (30x10x10 cm), and so on. These standard sizes allow for easy integration and compatibility with launch systems. MUNStar-1 will be a 3U CubeSat, which is a step up from its predecessor, Killick-1, which was a 2U CubeSat<br/><br/>
-						CubeSats are often used by universities, research institutions, and commercial entities to conduct experiments and research in space. They can be deployed as secondary payloads on larger launch missions, reducing the cost of reaching space. Despite their small size, CubeSats can carry a wide range of scientific instruments, sensors, and communication equipment, enabling them to perform a variety of tasks, such as Earth observation, environmental monitoring, technology testing, and more.<br/>
-					</div>
+	</div>
+	<div id="what" class="flex justify-center bg-zinc-900">
+		<div class="flex flex-col items-center py-10">
+			<div class="text-2xl text-white font-Sometype font-bold">What is a CubeSat?</div>
+			<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
+			<div class="relative mx-auto rounded-lg overflow-hidden">
+				<Image height={512} src={killick} alt="cubesat" />
+			</div>
+			<div class="pt-4 lg:px-[30%] px-10 text-gray-300">
+				<div class="font-Sometype">
+					A CubeSat, short for Cube Satellite, is a type of miniaturized satellite used for various purposes, including scientific research, technology demonstration, and education. CubeSats are small, cube-shaped spacecraft with standardized dimensions, which makes them relatively inexpensive to develop and launch compared to traditional, larger satellites.<br/><br/>
+					The most common CubeSat form factor is a 10x10x10 centimeter (1U) cube, with a mass of approximately 1 kilogram. However, variations exist, including 2U (20x10x10 cm), 3U (30x10x10 cm), and so on. These standard sizes allow for easy integration and compatibility with launch systems. MUNStar-1 will be a 3U CubeSat, which is a step up from its predecessor, Killick-1, which was a 2U CubeSat<br/><br/>
+					CubeSats are often used by universities, research institutions, and commercial entities to conduct experiments and research in space. They can be deployed as secondary payloads on larger launch missions, reducing the cost of reaching space. Despite their small size, CubeSats can carry a wide range of scientific instruments, sensors, and communication equipment, enabling them to perform a variety of tasks, such as Earth observation, environmental monitoring, technology testing, and more.<br/>
 				</div>
 			</div>
 		</div>
-		<div id="subsystems" class="flex justify-center bg-zinc-900">
-			<div class="flex flex-col items-center py-10">
-				<div class="text-2xl text-white font-Sometype font-bold">Subsystems</div>
-				<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
-				<div class="grid md:grid-cols-3 grid-cols-1 gap-20 px-20 xl:px-[20%]">
-					<SubsystemCard team="Mechanical" desc="Concerned with creating the frame of the CubeSat, which includes its design and manufacturing. The mechanical team also deals with proper spacing between stack components, ensuring that they fit within the frame. The mechanical subsystem must design in adherence to the specifications provided by the launcher."><Cog size={75} color='white' /></SubsystemCard>
-					<SubsystemCard team="Thermal" desc="This subsystem deals with the reduction of thermal radiation experienced in space, while also considering the heat dissipated by components in the electronic stack and providing engineering design on how to reduce stack heat-exposure."><Flame size={75} color='white' /></SubsystemCard>
-					<SubsystemCard team="ADCS" desc="The Altitude Determination & Control (ADCS) subsystem is crucial for ensuring proper pointing of the CubeSat over the area of interest for capturing. The satellite will be in a tumble post-launch, so the ADCS is essential for detumbling the CubeSat, and ensuring it is pointing properly over the region of interest, as well as towards the sun otherwise for charging purposes"><Satellite size={75} color="white" /></SubsystemCard>
-					<SubsystemCard team="MCS" desc="The Mission Control Subsystem (MCS) oversees and manages all satellite subsystems, ensuring their functionality and collecting telemetry and science data during the mission. Employing the Inter-Integrated Circuit (I2C) protocol, it communicates with subsystems, executing commands and receiving mission plans from the ground station in St. John's, Newfoundland and Labrador."><Computer size={75} color="white" /></SubsystemCard>
-					<SubsystemCard team="Power" desc="The MUNStar-1 CubeSat relies on its power subsystem to supply essential DC power to key components. Solar panels on PCBs, oriented for optimal sun exposure, serve as the primary energy source, complemented by four lithium-ion batteries. The electrical team ensures compliance with NASA specifications, including a timer circuit PCB for a thirty-minute power-off period post-launch, alongside crucial tasks like cable routing and battery testing."><Zap size={75} color="white" /></SubsystemCard>
-					<SubsystemCard team="Communications" desc="For data reception, the MUNStar-1 CubeSat relies on a ground station, communicating via radio waves. Ground stations receive and downlink signals, converting them into usable forms like images or data logs. This communication is vital for monitoring satellite operations and fulfilling the mission, particularly in generating delay Doppler maps to assess the North Atlantic's sea state."><SatelliteDish size={75} color="white" /></SubsystemCard>
-					<div class="md:col-start-2">
-						<SubsystemCard team="Payload" desc="The payload is in charge of what the satellite is supposed to do. In the case of MUNStar-1, the main payload is using Global Navigation Satellite System Reflectometry to produce Delay Doppler Maps, which oceanographers can use to determine the sea state, in a region of interest off the coast of the North Atlantic."><Weight size={75} color="white" /></SubsystemCard>
-					</div>
+	</div>
+	<div id="subsystems" class="flex justify-center bg-zinc-900">
+		<div class="flex flex-col items-center py-10">
+			<div class="text-2xl text-white font-Sometype font-bold">Subsystems</div>
+			<hr class="w-16 h-0.5 my-2 border-0 bg-gray-500">
+			<div class="grid md:grid-cols-3 grid-cols-1 gap-20 px-20 xl:px-[20%]">
+				<SubsystemCard team="Mechanical" desc="Concerned with creating the frame of the CubeSat, which includes its design and manufacturing. The mechanical team also deals with proper spacing between stack components, ensuring that they fit within the frame. The mechanical subsystem must design in adherence to the specifications provided by the launcher."><Cog size={75} color='white' /></SubsystemCard>
+				<SubsystemCard team="Thermal" desc="This subsystem deals with the reduction of thermal radiation experienced in space, while also considering the heat dissipated by components in the electronic stack and providing engineering design on how to reduce stack heat-exposure."><Flame size={75} color='white' /></SubsystemCard>
+				<SubsystemCard team="ADCS" desc="The Altitude Determination & Control (ADCS) subsystem is crucial for ensuring proper pointing of the CubeSat over the area of interest for capturing. The satellite will be in a tumble post-launch, so the ADCS is essential for detumbling the CubeSat, and ensuring it is pointing properly over the region of interest, as well as towards the sun otherwise for charging purposes"><Satellite size={75} color="white" /></SubsystemCard>
+				<SubsystemCard team="MCS" desc="The Mission Control Subsystem (MCS) oversees and manages all satellite subsystems, ensuring their functionality and collecting telemetry and science data during the mission. Employing the Inter-Integrated Circuit (I2C) protocol, it communicates with subsystems, executing commands and receiving mission plans from the ground station in St. John's, Newfoundland and Labrador."><Computer size={75} color="white" /></SubsystemCard>
+				<SubsystemCard team="Power" desc="The MUNStar-1 CubeSat relies on its power subsystem to supply essential DC power to key components. Solar panels on PCBs, oriented for optimal sun exposure, serve as the primary energy source, complemented by four lithium-ion batteries. The electrical team ensures compliance with NASA specifications, including a timer circuit PCB for a thirty-minute power-off period post-launch, alongside crucial tasks like cable routing and battery testing."><Zap size={75} color="white" /></SubsystemCard>
+				<SubsystemCard team="Communications" desc="For data reception, the MUNStar-1 CubeSat relies on a ground station, communicating via radio waves. Ground stations receive and downlink signals, converting them into usable forms like images or data logs. This communication is vital for monitoring satellite operations and fulfilling the mission, particularly in generating delay Doppler maps to assess the North Atlantic's sea state."><SatelliteDish size={75} color="white" /></SubsystemCard>
+				<div class="md:col-start-2">
+					<SubsystemCard team="Payload" desc="The payload is in charge of what the satellite is supposed to do. In the case of MUNStar-1, the main payload is using Global Navigation Satellite System Reflectometry to produce Delay Doppler Maps, which oceanographers can use to determine the sea state, in a region of interest off the coast of the North Atlantic."><Weight size={75} color="white" /></SubsystemCard>
 				</div>
 			</div>
 		</div>
-		<Footer />
-	</body>
-</html>
+	</div>
+</Layout>

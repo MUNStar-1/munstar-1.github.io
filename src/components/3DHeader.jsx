@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef} from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF, PerspectiveCamera, Stage, Environment, Billboard } from '@react-three/drei';
+import { useGLTF, PerspectiveCamera, Billboard } from '@react-three/drei';
 import { LayerMaterial, Depth } from 'lamina';
 import logo from '../content/logo.png';
 
@@ -34,17 +34,17 @@ const Glow = ({ color, scale = 0.5, near = -2, far = 1.4 }) => {
 	);
 };
 
-export const Header = () => {
+export const Header = (props) => {
 	return (
-		<div className="flex h-[50rem] bg-black justify-center items-center">
-			<Canvas className="object-cover absolute w-screen">
+		<div className="flex h-[35rem] bg-black justify-center items-center">
+			<Canvas className="absolute w-screen">
 				<PerspectiveCamera />
 				<ambientLight intensity={Math.PI} />
 				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
 				<Glow color="blue" scale={2.4} />
 				<Model position={[0, 0, 0]} />
 			</Canvas>
-			<img className="absolute" width='768px' src={logo.src} />
+			{props.heading ? <div className="absolute text-white text-5xl font-Sometype font-bold">- {props.heading} -</div> : <img className="absolute" width='768px' src={logo.src} />}
 		</div>
 	);
 };

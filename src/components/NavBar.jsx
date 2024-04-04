@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import logo from '../content/logo.png'
 
 export const NavbarHamburger = (props) => {
@@ -64,13 +63,13 @@ export const Navbar = () => {
 							<path strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 						</svg>
 					</li>
-					{/* <li><a className="text-sm text-gray-300 hover:text-gray-500" href="/#sponsors">Sponsorship</a></li> */}
-					{/* <li className="text-gray-400">
+					<li><a className="text-sm text-gray-300 hover:text-gray-500" href="/radio">Amateur Radio</a></li>
+					<li className="text-gray-400">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
 							<path strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
 						</svg>
-					</li> */}
-					<li><a className="text-sm text-gray-300 hover:text-gray-500" href="mailto:munstar1sat@gmail.com">Contact</a></li>	
+					</li>
+					<li><a className="text-sm text-gray-300 hover:text-gray-500" href="mailto:munstar1sat@gmail.com">Contact</a></li>
 				</ul>
 				<div className={`relative ${active ? 'flex items-center' : 'hidden'} flex-col pb-2 w-full lg:hidden lg:flex-grow lg:w-auto`}>
 					<a href="/#" className={`lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-Quicksand items-center justify-center hover:text-gray-400 `}>
@@ -79,9 +78,9 @@ export const Navbar = () => {
 					<a href="/#about" className={`lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-Quicksand items-center justify-center hover:text-gray-400 `}>
 						About Us
 					</a>
-					{/* <a href="/#sponsors" className={`lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-Quicksand items-center justify-center hover:text-gray-400 `}>
-						Sponsorship
-					</a> */}
+					<a href="/radio" className={`lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-Quicksand items-center justify-center hover:text-gray-400 `}>
+						Amateur Radio
+					</a>
 					<a href="mailto:munstar1sat@gmail.com" className={`lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-Quicksand items-center justify-center hover:text-gray-400 `}>
 						Contact
 					</a>

@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'Sometype': 'Sometype Mono',
-			}
+			},
 		},
 	},
 	plugins: [],
