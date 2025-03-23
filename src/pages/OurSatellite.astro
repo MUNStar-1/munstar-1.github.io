@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../Layouts/Layout.astro';
+import Munstar from '../content/munstar-layout.png'
+---
+
+<Layout>
+    <div class="relative mx-auto rounded-lg overflow-hidden">
+        <Image height={512} src={Munstar} alt="cubesat" />
+    </div>
+</Layout>

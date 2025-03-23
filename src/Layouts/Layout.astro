@@ -2,6 +2,7 @@
 import Navbar from '../components/NavBar';
 import Header from '../components/3DHeader';
 import Footer from '../components/Footer.astro';
+import Countdown from '../components/timer';
 
 interface Props {
 	heading?: string;
@@ -23,6 +24,7 @@ const {heading} = Astro.props;
 	<body>
 		<Navbar client:load />
 		<Header client:only="react" heading={heading} />
+		<Countdown client:load targetDate="2026-06-01T00:00:00" />
 		<slot />
 		<Footer />
 	</body>
